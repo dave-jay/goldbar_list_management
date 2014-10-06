@@ -10,8 +10,20 @@
 <!-- Our main JS file -->
 <script src="<?php print _MEDIA_URL; ?>assets/js/script.js"></script>
 <script type="text/javascript">
-    var delUrl = '';
-    
-    
-    
+    function doParseFile(response) {
+        $("#waitParse").show();
+        $.ajax({
+            url: _U + 'list',
+            data: {parseFile: 1, fName: response.fileName},
+            success: function(r) {
+                $("#sucParse,#sucDownload").show();
+                $("#waitParse").hide();
+                var res = $.parseJSON(r);
+                $("#hrefGI").attr("href", "uploads/" + res.gi);
+                $("#hrefNON").attr("href", "uploads/" + res.non_gi);
+            }
+        });
+    }
+
+
 </script>

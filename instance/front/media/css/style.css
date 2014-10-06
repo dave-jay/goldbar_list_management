@@ -293,7 +293,7 @@ label {
 }
 .alert-success {
     /*    border: 3px solid #88E9AA !important;*/
-    border: 3px solid #00CC66 !important;
+    /*border: 3px solid #00CC66 !important;*/
     border-radius: 10px !important;
     color: #006600 !important;
     background-color:#dff0d8 !important;
